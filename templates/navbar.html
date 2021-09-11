@@ -1,0 +1,43 @@
+{% load static %}
+{% include 'link.html' %}
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top " style="background-color: #6739EB">
+    <div class="container-fluid">
+
+      <div class="row justify-content-center">
+        <div class="col-xl-9 d-flex align-items-center">
+          <h1 class="logo mr-auto"><a href="/">Coding_music</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+          <nav class="nav-menu d-none d-lg-block">
+            <ul class="sidebar-nav--primary">
+
+{% url 'main:index' as index %}
+{% url 'main:portfolio' as portfolio %}
+{% url 'main:contact' as contact %}
+{% url 'main:musix' as musix %}
+
+              <li><a href="{{ index }}{% url 'index' %}" {% if request.path == index %}class="active"{% endif %}>Home</a></li>
+              <li><a href="{{ portfolio }} {% url 'portfolio' %}" {% if request.path == portfolio %}class="active"{% endif %}>portfolio</a></li>
+              <li><a href="{{ musix }} {% url 'musix' %}" {% if request.path == musix %}class="active"{% endif %}>musix</a></li>
+              <li><a href="{{ contact }} {% url 'contact' %}" {% if request.path == contact %}class="active"{% endif %}>contact</a></li>
+
+            </ul>
+          </nav>
+
+            <!-- nav-menu -->
+
+          <a href="https://t.me/coding_musix"  class="get-started-btn scrollto">Get Started</a>
+        </div>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+{% block port %}
+
+{% endblock %}
+{% block index %}
+
+{% endblock %}
